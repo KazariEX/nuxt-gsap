@@ -37,8 +37,10 @@ import { defineNuxtPlugin } from "#app";
 import { ${importPlugins.join()} } from "gsap${options.trial ? "-trial" : ""}/all";
 
 export default defineNuxtPlugin((nuxtApp) => {
-    const gsap = useGsap();
-    gsap.registerPlugin(${importPlugins.join()});
+    if (import.meta.browser) {
+        const gsap = useGsap();
+        gsap.registerPlugin(${importPlugins.join()});
+    }
 });
 `
         });
