@@ -1,5 +1,5 @@
 import { addImports, addPlugin, addPluginTemplate, createResolver, defineNuxtModule } from "@nuxt/kit";
-import { name } from "../package.json";
+import { name, version } from "../package.json";
 import { bundledPlugins } from "./shared";
 
 export interface ModuleOptions {
@@ -10,6 +10,7 @@ export interface ModuleOptions {
 export default defineNuxtModule<ModuleOptions>({
     meta: {
         name,
+        version,
         configKey: "gsap"
     },
     defaults: {
