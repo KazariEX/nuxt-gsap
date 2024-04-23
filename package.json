@@ -1,6 +1,6 @@
 {
   "name": "@zinkawaii/nuxt-gsap",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "GSAP module for Nuxt",
   "repository": "KazariEX/nuxt-gsap",
   "license": "MIT",
