@@ -28,7 +28,9 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.11.2"
+    "@nuxt/kit": "^3.11.2",
+    "gsap": "^3.12.5",
+    "gsap-trial": "^3.12.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.15.0",
