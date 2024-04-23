@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.2
+
+
+### 🩹 Fixes
+
+- 修复插件的导入路径问题 ([e5de061](https://github.com/KazariEX/nuxt-gsap/commit/e5de061))
+
+### ❤️ Contributors
+
+- KazariEX <1364035137@qq.com>
+
+
 ## v0.1.1
 
 
@@ -15,6 +27,7 @@
 ### ❤️ Contributors
 
 - KazariEX <1364035137@qq.com>
+
 
 ## v0.1.0
 
