@@ -3,8 +3,8 @@ import { name, version } from "../package.json";
 import { bundledPlugins } from "./shared";
 
 export interface ModuleOptions {
-    plugins: (keyof typeof bundledPlugins)[];
-    trial: boolean;
+    plugins?: (keyof typeof bundledPlugins)[];
+    trial?: boolean;
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -27,17 +27,17 @@ export default defineNuxtModule<ModuleOptions>({
 
         addPlugin(resolver.resolve("./runtime/v-gsap"));
 
-        const importPlugins = options.plugins.filter((name) => name in bundledPlugins);
+        const importPlugins = options.plugins?.filter((name) => name in bundledPlugins) || [];
 
         addPluginTemplate({
             filename: "register-plugin.ts",
             write: true,
             getContents: () => /* JS */`
 import { defineNuxtPlugin } from "#app";
-import gsap from "gsap";
 import { ${importPlugins.join()} } from "gsap${options.trial ? "-trial" : ""}/all";
 
 export default defineNuxtPlugin((nuxtApp) => {
+    const gsap = useGsap();
     gsap.registerPlugin(${importPlugins.join()});
 });
 `
