@@ -1,4 +1,9 @@
-export const bundledPlugins = {
+export type BundledPlugins = Record<string, {
+    club?: boolean;
+    path?: string;
+}>;
+
+export const bundledPlugins: BundledPlugins = {
     /* Free */
     CSSPlugin: {
     },
@@ -14,10 +19,13 @@ export const bundledPlugins = {
     },
     /* EasePack start */
     ExpoScaleEase: {
+        path: "/EasePack"
     },
     RoughEase: {
+        path: "/EasePack"
     },
     SlowMo: {
+        path: "/EasePack"
     },
     /* EasePack end */
     Flip: {

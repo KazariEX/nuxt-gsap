@@ -30,12 +30,14 @@ export default defineNuxtModule<ModuleOptions>({
         const importPlugins = options.plugins?.filter((name) => name in bundledPlugins) || [];
 
         addPluginTemplate({
-            filename: "register-plugin.ts",
+            filename: "gsap-plugins.ts",
             write: true,
             getContents: () => /* JS */`
 import { defineNuxtPlugin } from "#app";
-import { ${importPlugins.join()} } from "gsap${options.trial ? "-trial" : ""}/all";
-
+${importPlugins.map((name) => {
+    const item = bundledPlugins[name];
+    return `import { ${name} } from "gsap${options.trial ? "-trial" : ""}${item.path ?? `/${name}`}";\n`;
+}).join("")}
 export default defineNuxtPlugin((nuxtApp) => {
     if (import.meta.browser) {
         const gsap = useGsap();
