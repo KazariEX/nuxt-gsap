@@ -1,6 +1,21 @@
 # Changelog
 
 
+## v0.1.1
+
+
+### 🩹 Fixes
+
+- 修复服务端渲染时 ``gsap.registerPlugin()`` 不存在而报错的问题 ([21518aa](https://github.com/KazariEX/nuxt-gsap/commit/21518aa))
+
+### 🌊 Types
+
+- 为 ``useGsap`` 方法添加返回类型 ([3d98884](https://github.com/KazariEX/nuxt-gsap/commit/3d98884))
+
+### ❤️ Contributors
+
+- KazariEX <1364035137@qq.com>
+
 ## v0.1.0
 
 

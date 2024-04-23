@@ -1,6 +1,6 @@
 {
   "name": "@zinkawaii/nuxt-gsap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "GSAP module for Nuxt",
   "repository": "KazariEX/nuxt-gsap",
   "license": "MIT",
@@ -17,6 +17,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "prepack": "nuxt-module-build build",
     "dev": "nuxi dev playground",
