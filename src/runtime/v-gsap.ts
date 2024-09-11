@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import { defineNuxtPlugin } from "#app";
+import { defineNuxtPlugin } from "nuxt/app";
 
 export default defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.directive("gsap", {
