@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.3
+
+
+### 🩹 Fixes
+
+- 仅在指定插件时生成 plugin 文件 ([bf76cc2](https://github.com/KazariEX/nuxt-gsap/commit/bf76cc2))
+
+### ❤️ Contributors
+
+- KazariEX <1364035137@qq.com>
+
+
 ## v0.1.2
 
 
