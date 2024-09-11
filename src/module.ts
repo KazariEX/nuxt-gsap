@@ -17,7 +17,7 @@ export default defineNuxtModule<ModuleOptions>({
         plugins: [],
         trial: false
     },
-    setup(options, nuxt) {
+    setup(options) {
         const resolver = createResolver(import.meta.url);
 
         addImports({
@@ -29,10 +29,11 @@ export default defineNuxtModule<ModuleOptions>({
 
         const importPlugins = options.plugins?.filter((name) => name in bundledPlugins) || [];
 
-        addPluginTemplate({
-            filename: "gsap-plugins.ts",
-            write: true,
-            getContents: () => /* JS */`
+        if (importPlugins.length) {
+            addPluginTemplate({
+                filename: "gsap-plugins.ts",
+                write: true,
+                getContents: () => /* JS */`
 import { defineNuxtPlugin } from "#app";
 ${importPlugins.map((name) => {
     const item = bundledPlugins[name];
@@ -44,7 +45,8 @@ export default defineNuxtPlugin((nuxtApp) => {
         gsap.registerPlugin(${importPlugins.join()});
     }
 });
-`
-        });
+`.trim()
+            });
+        }
     }
 });
